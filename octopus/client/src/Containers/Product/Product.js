@@ -1,5 +1,5 @@
 import React from 'react'
-import { GET_PRODUCT } from '../../api/product'
+import { GET_PRODUCT } from '../../api/productGQL'
 import { useQuery } from "@apollo/react-hooks";
 
 
