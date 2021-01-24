@@ -3,16 +3,14 @@ import styled from 'styled-components'
 
 
 const StyledProductImg = styled.div`
-    padding: 0 60px 0 60px;
+    display: flex;
+    justify-content: center;
     > img {
         width: 330px;
         height: 390px;
     }
-    @media(min-width:480px) {
-        text-align:center;
-    }
-    `
-    
+`
+
 const StyledProduct = styled.div`
     background-image: linear-gradient(to bottom, rgb(5, 15, 42) 50%, rgb(1,25,59) 40%);
     @media(min-width:768px) {
@@ -79,30 +77,42 @@ const StyledButton = styled.button`
 `
 
 const StyledProductQuantity = styled.div`
-    
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding-right: 22px
 `
 
+const StyledProductQuantityCTA = styled.div`
+display: flex;
+width: 100%;
+    justify-content: end;
+`
 export const Product = ({ data }) => {
     const [quantity, setQuantity] = useState(1)
     return (
         <StyledProduct>
             <Row>
                 <StyledProductImg>
-                    <img src={data.imgUrl}/>
+                    <img src={data.imgUrl} />
                 </StyledProductImg>
                 <StyledProductHeader>
                     <h1>{data.name}</h1>
                 </StyledProductHeader>
                 <StyledProductMetaSection>{data.power} // Packet of {data.quantity}</StyledProductMetaSection>
                 <StyledProductPriceSection>
+                    <StyledProductQuantity>
+                        QTY
+                    </StyledProductQuantity>
                     <StyledProductPriceRow>
                         <div>
                             {data.price}
                         </div>
-                        <StyledProductQuantity>
-                            QTY
-                            {quantity}
-                        </StyledProductQuantity>
+                        <StyledProductQuantityCTA>
+                            <button>+</button>
+                                {quantity}
+                            <button>-</button>
+                        </StyledProductQuantityCTA>
                     </StyledProductPriceRow>
                     <StyledButton>Add to cart</StyledButton>
                 </StyledProductPriceSection>
