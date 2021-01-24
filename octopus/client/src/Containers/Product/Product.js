@@ -1,6 +1,7 @@
 import React from 'react'
 import { GET_PRODUCT } from '../../api/productGQL'
 import { useQuery } from "@apollo/react-hooks";
+import { Product } from '../../Components/Product/Product';
 
 
 export const ProductContainer = () => {
@@ -10,6 +11,6 @@ export const ProductContainer = () => {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error!</div>;
     return(
-        <div/>
+        <Product data={data.product} />
     )
 }
