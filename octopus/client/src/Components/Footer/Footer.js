@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const StyledFooter = styled.div`
     background-color: rgb(1,25,59);
-    justify-content: center;
     font-size: 14px;
     padding: 30px;
 `
@@ -12,6 +11,9 @@ const StyledFooterText = styled.div`
     display: flex;
     color: rgb(54,89,141);
     padding-bottom: 6px;
+    @media (min-width:1024px) {
+        justify-content: center;
+    }
 `
 
 const Footer = () => {
