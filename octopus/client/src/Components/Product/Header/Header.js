@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 const StyledHeader = styled.div`
-    background-color: rgb(4, 14, 41);
+    background-color: rgb(5, 15, 42);
     display: flex;
     margin-top: 0;
     padding: 10px;
