@@ -12,11 +12,10 @@ const StyledProductImg = styled.div`
 `
 
 const StyledProduct = styled.div`
-    background-image: linear-gradient(to bottom, rgb(5, 15, 42) 50%, rgb(1,25,59) 40%);
+    background-image: linear-gradient(to bottom, rgb(5, 15, 42) 100%, rgb(1,25,59) 100%);
     @media(min-width:768px) {
         padding-top: 40px;
-        background-image: none;
-        background-color: rgb(1,25,59);s
+        background-color: rgb(1,25,59);
     }
 `
 const StyledProductHeader = styled.div`
@@ -47,7 +46,7 @@ const StyledProductPriceSection = styled.div`
     background-color: rgb(5, 15, 42);
     color: white;
     font-size: 16px;
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px 30px 30px;
     display: flex;
     flex-wrap: wrap
 `
@@ -58,6 +57,12 @@ const Row = styled.div`
     }
 `
 
+const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`
+
 const StyledProductPriceRow = styled.div`
     display: flex;
     padding-bottom: 18px;
@@ -65,7 +70,7 @@ const StyledProductPriceRow = styled.div`
     width: 100%;
 `
 
-const StyledButton = styled.button`
+const StyledCartButton = styled.button`
     color: white;
     font-size: 26px;
     font-weight: 700;
@@ -80,16 +85,88 @@ const StyledProductQuantity = styled.div`
     display: flex;
     width: 100%;
     justify-content: end;
-    padding-right: 22px
+    padding-right: 24px;
+    font-size: 8px;
+    color: rgb(54,89,141);
 `
 
 const StyledProductQuantityCTA = styled.div`
-display: flex;
-width: 100%;
+    display: flex;
+    width: 100%;
     justify-content: end;
 `
-export const Product = ({ data }) => {
+
+const StyledProductDesc = styled.div`
+    display: flex;
+    background-color: rgb(1,25,59);
+    color: white;
+    flex-wrap: wrap;
+    padding: 10px 30px 30px 30px; 
+`
+
+const StyledSpecHeader = styled.div`
+    display: flex;
+    padding-bottom: 10px;
+`
+
+const StyledSpecSection = styled.div`
+    color: white;
+    padding: 30px 30px 30px 26px; 
+    background-color: rgb(5, 15, 42);
+    display: flex;
+    flex-wrap: wrap;
+`
+
+const StyledColumnItem = styled.div`
+    padding: 20px 0;
+    border-bottom: 2px solid rgb(1,25,59);
+    display: flex;
+`
+
+const StyledQtyRemoveButton = styled.button`
+    background-color: rgb(26, 42, 67);
+    color: white;
+    border: none;
+    border-radius: 4px;
+`
+
+const StyledQtyAddButton = styled.button`
+    background-color: rgb(54, 89, 141);
+    color: white;
+    border: none;
+    border-radius: 4px;
+`
+
+const StyledQtyAmount = styled.div`
+    font-weight: 600;
+    padding: 0 4px;
+`
+
+const StyledPrimaryPrice = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 22px;
+`
+
+const StyledSecondaryPrice = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 14px;
+`
+
+const Product = ({ data }) => {
     const [quantity, setQuantity] = useState(1)
+    const formatPrice = (price) => {
+        const decimalPoint = (((price / 1000) * 10).toFixed(2)).toString()
+        const splitAtDecimal = decimalPoint.split('.')
+        return {
+            primaryNo: Number(splitAtDecimal[0]),
+            secondaryNo: Number(splitAtDecimal[1]),
+        }
+    }
+    const formattedPrice = formatPrice(data.price)
     return (
         <StyledProduct>
             <Row>
@@ -105,18 +182,64 @@ export const Product = ({ data }) => {
                         QTY
                     </StyledProductQuantity>
                     <StyledProductPriceRow>
-                        <div>
-                            {data.price}
-                        </div>
+                        <StyledPrimaryPrice>
+                            <span>{formattedPrice.primaryNo}</span>
+                        </StyledPrimaryPrice>
+                        <StyledSecondaryPrice>
+                            <span>.{formattedPrice.secondaryNo}</span>
+                        </StyledSecondaryPrice>
                         <StyledProductQuantityCTA>
-                            <button>+</button>
-                                {quantity}
-                            <button>-</button>
+                            <StyledQtyRemoveButton>-</StyledQtyRemoveButton>
+                            <StyledQtyAmount>{quantity}</StyledQtyAmount>
+                            <StyledQtyAddButton>+</StyledQtyAddButton>
                         </StyledProductQuantityCTA>
                     </StyledProductPriceRow>
-                    <StyledButton>Add to cart</StyledButton>
+                    <StyledCartButton>Add to cart</StyledCartButton>
                 </StyledProductPriceSection>
+                <StyledProductDesc>
+                    <h1>Description</h1>
+                    <span>{data.description}</span>
+                </StyledProductDesc>
+                <StyledSpecSection>
+                    <StyledSpecHeader>
+                        <h1>Specifications</h1>
+                    </StyledSpecHeader>
+                    <Column>
+                        <StyledColumnItem>
+                            <Column>
+                                <span>Brand</span>
+                            </Column>
+                            <Column>{data.brand}</Column>
+                        </StyledColumnItem>
+                        <StyledColumnItem>
+                            <Column>
+                                <span>Item Weight</span>
+                            </Column>
+                            <Column>{data.weight}</Column>
+                        </StyledColumnItem>
+                        <StyledColumnItem>
+                            <Column>
+                                <span>Dimensions</span>
+                            </Column>
+                            <Column>{data.height}x{data.width}x{data.length}</Column>
+                        </StyledColumnItem>
+                        <StyledColumnItem>
+                            <Column>
+                                <span>Item model number</span>
+                            </Column>
+                            <Column>{data.modelCode}</Column>
+                        </StyledColumnItem>
+                        <StyledColumnItem>
+                            <Column>
+                                <span>Colour</span>
+                            </Column>
+                            <Column>{data.colour}</Column>
+                        </StyledColumnItem>
+                    </Column>
+                </StyledSpecSection>
             </Row>
         </StyledProduct>
     )
 }
+
+export default Product;
