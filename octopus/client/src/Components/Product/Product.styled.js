@@ -79,6 +79,7 @@ const StyledCartButton = styled.button`
     background-image: linear-gradient(to bottom, rgb(255,100,170) 50%, rgb(251, 26, 123) 50%);
     width: 100%;
     padding: 16px;
+    cursor: pointer;
     @media (min-width:640px) {
         width: 70%;
         margin-top: 12px;
@@ -166,6 +167,7 @@ const StyledQtyRemoveButton = styled.button`
     color: white;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
     @media (min-width:640px) {
         font-size: 22px;
         padding: 10px;
@@ -177,6 +179,7 @@ const StyledQtyAddButton = styled.button`
     color: white;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
     @media (min-width:640px) {
         font-size: 22px;
         padding: 10px;
