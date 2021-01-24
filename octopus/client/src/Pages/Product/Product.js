@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { Product } from '../../Components/Product/Product';
 
 
-export const ProductContainer = () => {
+export const ProductPage = () => {
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { ID: 1 }
     })
