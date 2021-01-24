@@ -25,7 +25,9 @@ const {
     StyledSecondaryPrice,
     StyledPricing,
     StyledCartButtonRow,
-    StyledCartButton } = ProductStyling
+    StyledCartButton,
+    StyledProductDescHeader
+ } = ProductStyling
 
 const Product = ({ data }) => {
     const [quantity, setQuantity] = useState(1)
@@ -41,44 +43,48 @@ const Product = ({ data }) => {
     
     return (
         <StyledProduct>
-            <Row>
-                <StyledProductImg>
-                    <img src={data.imgUrl} />
-                </StyledProductImg>
-                <StyledProductHeader>
-                    <h1>{data.name}</h1>
-                </StyledProductHeader>
-                <StyledProductMetaSection>{data.power} // Packet of {data.quantity}</StyledProductMetaSection>
-                <StyledProductPriceSection>
-                    <StyledProductPriceRow>
-                        <StyledPricing>
-                            <StyledPrimaryPrice>
-                                <span>{formattedPrice.primaryNo}</span>
-                            </StyledPrimaryPrice>
-                            <StyledSecondaryPrice>
-                                <span>.{formattedPrice.secondaryNo}</span>
-                            </StyledSecondaryPrice>
-                        </StyledPricing>
-                        <StyledProductQuantityCTA>
-                            <StyledProductQuantity>
-                                QTY
-                            </StyledProductQuantity>
-                            <StyledQtyRemoveButton>
-                                <FontAwesomeIcon icon={faMinus} />
-                            </StyledQtyRemoveButton>
-                            <StyledQtyAmount>{quantity}</StyledQtyAmount>
-                            <StyledQtyAddButton>
-                                <FontAwesomeIcon icon={faPlus} />
-                            </StyledQtyAddButton>
-                        </StyledProductQuantityCTA>
-                    </StyledProductPriceRow>
-                    <StyledCartButtonRow>
-                        <StyledCartButton>Add to cart</StyledCartButton>
-                    </StyledCartButtonRow>
-                </StyledProductPriceSection>
+                    <StyledProductImg>
+                        <img src={data.imgUrl} />
+                    </StyledProductImg>
+                    <StyledProductHeader>
+                        <h1>{data.name}</h1>
+                    </StyledProductHeader>
+                    <StyledProductMetaSection>{data.power} // Packet of {data.quantity}</StyledProductMetaSection>
+                
+                    <StyledProductPriceSection>
+                        <StyledProductPriceRow>
+                            <StyledPricing>
+                                <StyledPrimaryPrice>
+                                    <span>{formattedPrice.primaryNo}</span>
+                                </StyledPrimaryPrice>
+                                <StyledSecondaryPrice>
+                                    <span>.{formattedPrice.secondaryNo}</span>
+                                </StyledSecondaryPrice>
+                            </StyledPricing>
+                            <StyledProductQuantityCTA>
+                                <StyledProductQuantity>
+                                    QTY
+                                </StyledProductQuantity>
+                                <StyledQtyRemoveButton>
+                                    <FontAwesomeIcon icon={faMinus} />
+                                </StyledQtyRemoveButton>
+                                <StyledQtyAmount>{quantity}</StyledQtyAmount>
+                                <StyledQtyAddButton>
+                                    <FontAwesomeIcon icon={faPlus} />
+                                </StyledQtyAddButton>
+                            </StyledProductQuantityCTA>
+                        </StyledProductPriceRow>
+                        <StyledCartButtonRow>
+                            <StyledCartButton>Add to cart</StyledCartButton>
+                        </StyledCartButtonRow>
+                    </StyledProductPriceSection>
                 <StyledProductDesc>
-                    <h1>Description</h1>
-                    <span>{data.description}</span>
+                    <StyledProductDescHeader>
+                        <h1>Description</h1>
+                    </StyledProductDescHeader>
+                    <Column>
+                        <span>{data.description}</span>
+                    </Column>
                 </StyledProductDesc>
                 <StyledSpecSection>
                     <StyledSpecHeader>
@@ -117,7 +123,6 @@ const Product = ({ data }) => {
                         </StyledColumnItem>
                     </Column>
                 </StyledSpecSection>
-            </Row>
         </StyledProduct>
     )
 }

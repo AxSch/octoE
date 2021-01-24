@@ -24,7 +24,7 @@ const StyledProductHeader = styled.div`
     color: white;
     font-size: 18px;
     padding: 0 30px;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         justify-content: center;
     }
     
@@ -35,7 +35,7 @@ const StyledProductMetaSection = styled.div`
     color: rgb(54,89,141);
     font-size: 16px;
     padding: 0 0 20px 30px;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         display: flex;
         justify-content: center;
     }
@@ -49,17 +49,15 @@ const StyledProductPriceSection = styled.div`
     display: flex;
     flex-wrap: wrap;
 `
-const Row = styled.div`
-    @media(min-width:768px) {
-        display: flex;
-        flex-wrap: wrap;
-    }
-`
 
 const Column = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    @media (min-width:1024px) {
+        width: 60%;
+        align-items: space-around;
+    }  
 `
 
 const StyledProductPriceRow = styled.div`
@@ -67,6 +65,9 @@ const StyledProductPriceRow = styled.div`
     padding-bottom: 18px;
     width: 100%;
     align-items: center;
+    @media(min-width:640px) {
+        align-items: end;
+    }
 `
 
 const StyledCartButton = styled.button`
@@ -78,9 +79,13 @@ const StyledCartButton = styled.button`
     background-image: linear-gradient(to bottom, rgb(255,100,170) 50%, rgb(251, 26, 123) 50%);
     width: 100%;
     padding: 16px;
-    @media (min-width:480px) {
-        margin-top: 12px;
+    @media (min-width:640px) {
         width: 70%;
+        margin-top: 12px;
+    }
+    @media (min-width:768px) {
+        width: 30%;
+        margin-top: 12px;
     }
 `
 
@@ -91,7 +96,7 @@ const StyledProductQuantity = styled.div`
     padding-right: 26px;
     font-size: 8px;
     color: rgb(54,89,141);
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         align-items: center;
         justify-content: start;
         font-size: 16px;
@@ -105,7 +110,7 @@ const StyledProductQuantityCTA = styled.div`
     width: 100%;
     justify-content: end;
     flex-wrap: wrap;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         align-items: center;
         justify-content: start;
         margin-left: 26px;
@@ -118,14 +123,25 @@ const StyledProductDesc = styled.div`
     color: white;
     flex-wrap: wrap;
     padding: 10px 30px 30px 30px; 
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         justify-content: center;
-    }   
+        align-items: center;
+    }
+`
+
+const StyledProductDescHeader = styled.div`
+@media (min-width:1024px) {
+    margin-right: 40px;
+    padding-right: 56px; 
+}
 `
 
 const StyledSpecHeader = styled.div`
     display: flex;
     padding-bottom: 10px;
+    @media (min-width:1024px) {
+        margin-right: 40px; 
+    }
 `
 
 const StyledSpecSection = styled.div`
@@ -134,9 +150,9 @@ const StyledSpecSection = styled.div`
     background-color: rgb(5, 15, 42);
     display: flex;
     flex-wrap: wrap;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         justify-content: center;
-    }   
+    } 
 `
 
 const StyledColumnItem = styled.div`
@@ -150,7 +166,7 @@ const StyledQtyRemoveButton = styled.button`
     color: white;
     border: none;
     border-radius: 4px;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         font-size: 22px;
         padding: 10px;
     }
@@ -161,7 +177,7 @@ const StyledQtyAddButton = styled.button`
     color: white;
     border: none;
     border-radius: 4px;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         font-size: 22px;
         padding: 10px;
     }
@@ -179,7 +195,7 @@ const StyledPrimaryPrice = styled.div`
     flex-direction: column;
     font-weight: 600;
     font-size: 22px;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         font-size: 32px;
     }
 `
@@ -189,14 +205,14 @@ const StyledSecondaryPrice = styled.div`
     flex-direction: column;
     font-weight: 600;
     font-size: 14px;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         font-size: 16px;
     }
 `
 
 const StyledPricing = styled.div`
     display: flex;
-    @media (min-width:480px) {
+    @media (min-width:640px) {
         width:100%;
         justify-content: end;
     }   
@@ -204,15 +220,14 @@ const StyledPricing = styled.div`
 
 const StyledCartButtonRow = styled.div`
     display: flex;
-    @media (min-width:480px) {
-        width:100%;
+    width:100%;
+    @media (min-width:640px) {
         justify-content: center;
     }   
 `
 
 export default {
     StyledProductImg,
-    Row,
     Column,
     StyledProduct,
     StyledProductHeader,
@@ -232,5 +247,6 @@ export default {
     StyledSecondaryPrice,
     StyledPricing,
     StyledCartButtonRow,
-    StyledCartButton
+    StyledCartButton,
+    StyledProductDescHeader
 }
