@@ -1,10 +1,10 @@
 import React from 'react'
 import { GET_PRODUCT } from '../../api/productGQL'
 import { useQuery } from "@apollo/react-hooks";
-import { Product } from '../../Components/Product/Product';
+import Product from '../../Components/Product/Product';
 
 
-export const ProductPage = () => {
+const ProductPage = () => {
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { ID: 1 }
     })
@@ -14,3 +14,5 @@ export const ProductPage = () => {
         <Product data={data.product} />
     )
 }
+
+export default ProductPage;
