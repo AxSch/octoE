@@ -5,7 +5,6 @@ import ProductStyling from './Product.styled'
 
 const {
     StyledProductImg,
-    Row,
     Column,
     StyledProduct,
     StyledProductHeader,
@@ -44,7 +43,7 @@ const Product = ({ data }) => {
     return (
         <StyledProduct>
                     <StyledProductImg>
-                        <img src={data.imgUrl} />
+                        <img alt="product-image" src={data.imgUrl} />
                     </StyledProductImg>
                     <StyledProductHeader>
                         <h1>{data.name}</h1>
