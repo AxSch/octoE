@@ -10,7 +10,6 @@ const StyledFooter = styled.div`
 
 const StyledFooterText = styled.div`
     display: flex;
-    width: 100%;
     color: rgb(54,89,141);
     padding-bottom: 6px;
 `
