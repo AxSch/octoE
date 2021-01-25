@@ -1,36 +1,38 @@
-import React from 'react';
-import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
+import { selectCartItems } from '../../reducers/cart/cartSlice'
+import { useSelector } from 'react-redux'
+import HeaderStyling from './Header.styled'
 
-const StyledHeader = styled.div`
-    background-color: rgb(5, 15, 42);
-    display: flex;
-    margin-top: 0;
-    padding: 10px;
-    color: white;
-    justify-content: space-between;
-    align-items: center
-`
-
-const StyledLogo = styled.div`
-    display: flex;
-    flex-direction: row;
-    > :last-child {
-        padding-left: 4px;
-        font-weight: 100;
-    }
-
-`
+const {
+    StyledHeader,
+    StyledLogo,
+    StyledCartNumber,
+    StyledCartRow
+} = HeaderStyling
 
 const Header = () => {
+    const cartItems = useSelector(selectCartItems)
+
+    const renderCartAmount = () => {
+        if (cartItems === 0) return
+        return (
+            <StyledCartNumber>
+                {cartItems}
+            </StyledCartNumber>
+        )
+    }
     return (
         <StyledHeader>
             <StyledLogo>
                 <h1>octopus</h1>
                 <h1>energy</h1>
             </StyledLogo>
-            <FontAwesomeIcon icon={faShoppingBasket} size="3x"/>
+            <StyledCartRow>
+                <FontAwesomeIcon icon={faShoppingBasket} size="3x"/>
+                {renderCartAmount()}
+            </StyledCartRow>
         </StyledHeader>
     );
 }
