@@ -61,7 +61,7 @@ exports[`should be able to increase and decrease product quantity renders succes
             QTY
           </div>
           <button
-            class="sc-bqyKva iSmnJx"
+            class="sc-bqyKva chPCpe"
             data-testid="subtractButton"
           >
             <svg
@@ -87,7 +87,7 @@ exports[`should be able to increase and decrease product quantity renders succes
             1
           </div>
           <button
-            class="sc-kstrdz cRpKDE"
+            class="sc-kstrdz dUxZPy"
             data-testid="addButton"
           >
             <svg
@@ -112,7 +112,7 @@ exports[`should be able to increase and decrease product quantity renders succes
         class="sc-idOhPF fGMGEh"
       >
         <button
-          class="sc-iBPRYJ ifJEwQ"
+          class="sc-iBPRYJ buoooV"
           data-testid="addToCartButton"
         >
           Add to cart
