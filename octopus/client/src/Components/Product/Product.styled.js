@@ -123,7 +123,7 @@ const StyledProductDesc = styled.div`
     background-color: rgb(1,25,59);
     color: white;
     flex-wrap: wrap;
-    padding: 10px 30px 30px 30px; 
+    padding: 10px 30px 20px 30px; 
     @media (min-width:640px) {
         justify-content: center;
         align-items: center;
