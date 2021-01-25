@@ -162,7 +162,7 @@ const StyledColumnItem = styled.div`
     display: flex;
 `
 
-const StyledQtyRemoveButton = styled.button`
+const StyledQtySubtractButton = styled.button`
     background-color: rgb(26, 42, 67);
     color: white;
     border: none;
@@ -241,7 +241,7 @@ export default {
     StyledSpecHeader,
     StyledSpecSection,
     StyledColumnItem,
-    StyledQtyRemoveButton,
+    StyledQtySubtractButton,
     StyledQtyAddButton,
     StyledQtyAmount,
     StyledProductPriceSection,
