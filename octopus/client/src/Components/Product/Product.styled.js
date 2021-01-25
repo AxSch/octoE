@@ -99,8 +99,8 @@ const StyledProductQuantity = styled.div`
     display: flex;
     width: 100%;
     justify-content: end;
-    padding-right: 26px;
-    font-size: 8px;
+    padding-right: 28px;
+    font-size: 16px;
     color: rgb(54,89,141);
     @media (min-width:640px) {
         align-items: center;
@@ -173,6 +173,7 @@ const StyledQtySubtractButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    padding: 12px;
     &:hover {
         background-color: rgb(36, 57, 92);
     }
@@ -188,6 +189,7 @@ const StyledQtyAddButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    padding: 12px;
     &:hover {
         background-color: rgb(63, 104, 166);
     }
@@ -202,13 +204,14 @@ const StyledQtyAmount = styled.div`
     padding: 0 6px;
     display: flex;
     align-items: center;
+    font-size: 20px;
 `
 
 const StyledPrimaryPrice = styled.div`
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 32px;
     @media (min-width:640px) {
         font-size: 32px;
     }
@@ -218,7 +221,7 @@ const StyledSecondaryPrice = styled.div`
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     @media (min-width:640px) {
         font-size: 16px;
     }
