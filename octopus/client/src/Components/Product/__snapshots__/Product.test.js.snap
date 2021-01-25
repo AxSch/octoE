@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should be able to increase and decrease product quantity renders successfully 1`] = `
+<div>
+  <div
+    class="sc-gsTCUz ehKVQH"
+    data-testid="product"
+  >
+    <div
+      class="sc-bdfBwQ hTgnrq"
+    >
+      <img
+        alt="product-main"
+      />
+    </div>
+    <div
+      class="sc-dlfnbm dfaYQX"
+    >
+      <h1>
+        Bulba
+      </h1>
+    </div>
+    <div
+      class="sc-hKgILt egFqBQ"
+    >
+      Green
+       // Packet of 
+      1
+    </div>
+    <div
+      class="sc-eCssSg gLBkuG"
+    >
+      <div
+        class="sc-gKsewC ioURlo"
+      >
+        <div
+          class="sc-bkzZxe kLiOVN"
+        >
+          <div
+            class="sc-fodVxV JsNvX"
+          >
+            <span>
+              34
+            </span>
+          </div>
+          <div
+            class="sc-fFubgz kGOoPf"
+          >
+            <span>
+              .
+              44
+            </span>
+          </div>
+        </div>
+        <div
+          class="sc-pFZIQ gqKuOQ"
+        >
+          <div
+            class="sc-fubCfw ceTAHb"
+          >
+            QTY
+          </div>
+          <button
+            class="sc-bqyKva iSmnJx"
+            data-testid="subtractButton"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-minus fa-w-14 "
+              data-icon="minus"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <div
+            class="sc-hBEYos jQBlmP"
+            data-testid="productQuantity"
+          >
+            1
+          </div>
+          <button
+            class="sc-kstrdz cRpKDE"
+            data-testid="addButton"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-plus fa-w-14 "
+              data-icon="plus"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-idOhPF fGMGEh"
+      >
+        <button
+          class="sc-iBPRYJ ifJEwQ"
+          data-testid="addToCartButton"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div
+      class="sc-jrAGrp dmMqcy"
+    >
+      <div
+        class="sc-kEjbxe dvQzaG"
+      >
+        <h1>
+          Description
+        </h1>
+      </div>
+      <div
+        class="sc-jSgupP EWObi"
+      >
+        <span>
+          Renewables at your fingertips
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-crrsfI cNFJOC"
+    >
+      <div
+        class="sc-iqHYGH jwRLTY"
+      >
+        <h1>
+          Specifications
+        </h1>
+      </div>
+      <div
+        class="sc-jSgupP EWObi"
+      >
+        <div
+          class="sc-dQppl jQFIRP"
+        >
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            <span>
+              Brand
+            </span>
+          </div>
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            Oak
+          </div>
+        </div>
+        <div
+          class="sc-dQppl jQFIRP"
+        >
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            <span>
+              Item Weight
+            </span>
+          </div>
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            15.2
+          </div>
+        </div>
+        <div
+          class="sc-dQppl jQFIRP"
+        >
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            <span>
+              Dimensions
+            </span>
+          </div>
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            2.04
+            x
+            x
+            1
+          </div>
+        </div>
+        <div
+          class="sc-dQppl jQFIRP"
+        >
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            <span>
+              Item model number
+            </span>
+          </div>
+          <div
+            class="sc-jSgupP EWObi"
+          />
+        </div>
+        <div
+          class="sc-dQppl jQFIRP"
+        >
+          <div
+            class="sc-jSgupP EWObi"
+          >
+            <span>
+              Colour
+            </span>
+          </div>
+          <div
+            class="sc-jSgupP EWObi"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
