@@ -37,14 +37,14 @@ exports[`should be able to increase and decrease product quantity renders succes
           class="sc-bkzZxe kLiOVN"
         >
           <div
-            class="sc-fodVxV JsNvX"
+            class="sc-fodVxV CkOoS"
           >
             <span>
               34
             </span>
           </div>
           <div
-            class="sc-fFubgz kGOoPf"
+            class="sc-fFubgz dUa-Dtj"
           >
             <span>
               .
@@ -56,12 +56,12 @@ exports[`should be able to increase and decrease product quantity renders succes
           class="sc-pFZIQ gqKuOQ"
         >
           <div
-            class="sc-fubCfw ceTAHb"
+            class="sc-fubCfw ktvfKK"
           >
             QTY
           </div>
           <button
-            class="sc-bqyKva chPCpe"
+            class="sc-bqyKva dwFcCX"
             data-testid="subtractButton"
           >
             <svg
@@ -81,13 +81,13 @@ exports[`should be able to increase and decrease product quantity renders succes
             </svg>
           </button>
           <div
-            class="sc-hBEYos jQBlmP"
+            class="sc-hBEYos eBhVqd"
             data-testid="productQuantity"
           >
             1
           </div>
           <button
-            class="sc-kstrdz dUxZPy"
+            class="sc-kstrdz jvyPoL"
             data-testid="addButton"
           >
             <svg
