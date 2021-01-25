@@ -82,3 +82,4 @@ tags
 .pytest_cache/
 
 node_modules
+octopus/client/.env
