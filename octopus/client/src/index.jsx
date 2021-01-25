@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from "@apollo/react-hooks";
 import { Provider } from 'react-redux';
-import store from './store/store';
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from './store/store';
 
 import './index.scss';
 import App from './App';
@@ -14,7 +15,9 @@ const client = new ApolloClient({ uri: process.env.REACT_APP_API_URL });
 const ApolloApp = AppComponent => (
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <AppComponent />
+      <PersistGate loading={null} persistor={persistor}>
+        <AppComponent />
+      </PersistGate>
     </Provider>
   </ApolloProvider>
 );
