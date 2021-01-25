@@ -80,6 +80,11 @@ const StyledCartButton = styled.button`
     width: 100%;
     padding: 16px;
     cursor: pointer;
+    &:hover {
+        color: rgb(242, 242, 242);
+        background-image: linear-gradient(to bottom, rgb(255, 153, 199) 50%, rgb(253, 104, 169) 50%);
+    }
+
     @media (min-width:640px) {
         width: 70%;
         margin-top: 12px;
@@ -168,6 +173,9 @@ const StyledQtySubtractButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    &:hover {
+        background-color: rgb(36, 57, 92);
+    }
     @media (min-width:640px) {
         font-size: 22px;
         padding: 10px;
@@ -180,6 +188,9 @@ const StyledQtyAddButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    &:hover {
+        background-color: rgb(63, 104, 166);
+    }
     @media (min-width:640px) {
         font-size: 22px;
         padding: 10px;
