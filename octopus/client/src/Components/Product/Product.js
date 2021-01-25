@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import ProductStyling from './Product.styled'
 import { storeItems } from '../../reducers/cart/cartSlice'
-import store from '../../store/store'
+import { useDispatch } from 'react-redux';
 
 const {
     StyledProductImg,
@@ -17,7 +17,7 @@ const {
     StyledSpecHeader,
     StyledSpecSection,
     StyledColumnItem,
-    StyledQtyRemoveButton,
+    StyledQtySubtractButton,
     StyledQtyAddButton,
     StyledQtyAmount,
     StyledProductPriceSection,
@@ -32,7 +32,8 @@ const {
 
 const Product = ({ data }) => {
     const [quantity, setQuantity] = useState(1)
-    
+    const dispatch = useDispatch()
+
     const formatPrice = (price) => {
         const decimalPoint = (((price / 1000) * 10).toFixed(2)).toString()
         const splitAtDecimal = decimalPoint.split('.')
@@ -50,7 +51,7 @@ const Product = ({ data }) => {
             price: data.price,
             quantity: quantity
         }
-        store.dispatch(storeItems(cartItem))
+        dispatch(storeItems(cartItem))
     }
 
     const reduceQuantity = () => {
@@ -61,7 +62,7 @@ const Product = ({ data }) => {
     }
 
     return (
-        <StyledProduct>
+        <StyledProduct data-testid="product">
             <StyledProductImg>
                 <img alt="product-main" src={data.imgUrl} />
             </StyledProductImg>
@@ -83,17 +84,17 @@ const Product = ({ data }) => {
                         <StyledProductQuantity>
                             QTY
                         </StyledProductQuantity>
-                        <StyledQtyRemoveButton onClick={() => reduceQuantity()}>
+                        <StyledQtySubtractButton data-testid="subtractButton" onClick={() => reduceQuantity()}>
                             <FontAwesomeIcon icon={faMinus} />
-                        </StyledQtyRemoveButton>
-                        <StyledQtyAmount>{quantity}</StyledQtyAmount>
-                        <StyledQtyAddButton onClick={() => setQuantity(quantity + 1)}>
+                        </StyledQtySubtractButton>
+                        <StyledQtyAmount data-testid="productQuantity">{quantity}</StyledQtyAmount>
+                        <StyledQtyAddButton data-testid="addButton" onClick={() => setQuantity(quantity + 1)}>
                             <FontAwesomeIcon icon={faPlus} />
                         </StyledQtyAddButton>
                     </StyledProductQuantityCTA>
                 </StyledProductPriceRow>
                 <StyledCartButtonRow>
-                    <StyledCartButton onClick={() => addToCart()}>Add to cart</StyledCartButton>
+                    <StyledCartButton data-testid="addToCartButton" onClick={() => addToCart()}>Add to cart</StyledCartButton>
                 </StyledCartButtonRow>
             </StyledProductPriceSection>
             <StyledProductDesc>
