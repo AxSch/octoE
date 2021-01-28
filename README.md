@@ -66,6 +66,9 @@ Once you have your server running, you're ready to install the front end depende
 # Navigate into the react app
 cd octopus/client
 
+# set up .env file using .env.example as a base - it should contain the following variable:
+REACT_APP_API_URL=
+
 # install dependencies
 yarn
 
